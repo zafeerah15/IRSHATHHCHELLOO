@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Love?</title>
+<style>
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2 id="question">Will you be my love?</h2>
+
+<div id="buttons">
+  <button onclick="handleYes()">Yes</button>
+  <button onclick="handleNo()">No</button>
+</div>
+
+<script>
+let pleaseCount = 0;
+
+function handleYes() {
+  alert("HEHE MEE LOVEE YOUU");
+}
+
+function handleNo() {
+  pleaseCount++;
+  if (pleaseCount < 5) {
+    document.getElementById('question').textContent = "Pleasee".repeat(pleaseCount);
+    var yesButton = document.querySelector('#buttons button:first-child');
+    yesButton.style.fontSize = (parseFloat(window.getComputedStyle(yesButton).fontSize) + 2) + 'px';
+  } else {
+    document.getElementById('question').innerHTML = "<span style='color: red;'>Too bad, I've already decided to be your love.</span>";
+    document.getElementById('buttons').innerHTML = ''; // Remove the buttons
+  }
+}
+</script>
+
+</body>
+</html>
